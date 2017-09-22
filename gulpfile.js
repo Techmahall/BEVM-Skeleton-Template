@@ -11,20 +11,24 @@ var del       = require('del');
 
 // refresh browser on changes
 gulp.task('browser-sync', function() {
-    bs.init({
-        server: {
-            baseDir: "./dist"
-        }
-    });
+  bs.init({
+    server: {
+      baseDir: "./dist"
+    }
+  });
 });
 
 // sass it
 gulp.task('sass', function () {
-    return gulp.src('src/scss/**/*.scss')
-    .pipe(sass())
-    .pipe(concatCss("app.css"))
-    .pipe(gulp.dest('./dist/assets/css/'))
-    .pipe(bs.reload({stream: true}));
+  return gulp.src('src/scss/**/*.scss')
+  .pipe(sass())
+  .on('error', function (err) {
+    console.log(err.toString());
+    this.emit('end');
+  })
+  .pipe(concatCss("app.css"))
+  .pipe(gulp.dest('./dist/assets/css/'))
+  .pipe(bs.reload({stream: true}));
 });
 
 // minify and concat scripts
@@ -37,36 +41,36 @@ gulp.task('scripts', function() {
 
 // copy the html to dist
 gulp.task('copy', function () {
-    gulp.src('src/**/*.html')
-    .pipe(gulp.dest('dist/'));
+  gulp.src('src/**/*.html')
+  .pipe(gulp.dest('dist/'));
 });
 
 // refresh browser on changes
 gulp.task('browser-sync', function() {
-    bs.init({
-        server: {
-            baseDir: "./dist"
-        }
-    });
+  bs.init({
+    server: {
+      baseDir: "./dist"
+    }
+  });
 });
 
 // delete dist on init
 gulp.task('clean', function () {
-    del.sync(['dist']);
+  del.sync(['dist']);
 });
 
 // clean up and build
 gulp.task('build', ['clean'], function() {
-    console.log('Building...');
-    gulp.start(['sass', 'scripts', 'copy']);
+  console.log('Building...');
+  gulp.start(['sass', 'scripts', 'copy']);
 });
 
 // watch the tasks
 gulp.task('watch', ['browser-sync'], function () {
-    gulp.watch("src/scss/**/*.scss", ['sass']);
-    gulp.watch('src/lib/**/*.js', ['scripts']);
-    gulp.watch('src/**/*.html', ['copy']);
-    gulp.watch("src/**/*.html").on('change', bs.reload);
+  gulp.watch("src/scss/**/*.scss", ['sass']);
+  gulp.watch('src/lib/**/*.js', ['scripts']);
+  gulp.watch('src/**/*.html', ['copy']);
+  gulp.watch("src/**/*.html").on('change', bs.reload);
 });
 
 // default and production
