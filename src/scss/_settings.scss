@@ -1,0 +1,42 @@
+/*=================================
+=            #settings            =
+=================================*/
+
+/**
+ *
+ * 1. Global
+ *
+ */
+
+
+
+/*=================================
+=            1. Global            =
+=================================*/
+@import 'util/util';
+
+$global-font-size:  120%;
+$global-width:      1200px;
+$global-lineheight: 1.5;
+$colors: (
+  primary:   #CD4E4E,
+  secondary: #767676,
+  success:   #3adb76,
+  warning:   #ffae00,
+  alert:     #cc4b37,
+);
+$light-gray:  #e6e6e6;
+$medium-gray: #cacaca;
+$dark-gray:   #444444;
+$white:       #ffffff;
+$black:       #000000;
+
+
+
+/*======================================
+=            2. Breakpoints            =
+======================================*/
+$breakpoint-small:   640px;
+$breakpoint-medium:  960px;
+$breakpoint-large:   1200px;
+$breakpoint-xlarge:  1440px;

@@ -1,0 +1,46 @@
+/*=============================
+=            #menu            =
+=============================*/
+
+.menu {
+	list-style-type:  none;
+	margin:           0;
+	overflow:         hidden;
+	padding:          0;
+
+	&.-dark {
+		background: $dark-gray;
+
+		.menu__item {
+			a {
+				color:      $white;
+
+				&:hover {
+					background: darken($dark-gray, 10%);
+				}
+			}
+		} // menu__item
+	} // -dark
+
+	&.-bordered {
+		border-bottom: 1px solid $medium-gray;
+	} // -bordered
+} // menu
+
+
+
+.menu__item {
+	float: left;
+
+	a {
+		color:           $dark-gray;
+		display:         block;
+		padding:         14px 16px;
+		text-align:      center;
+		text-decoration: none;
+
+		&:hover {
+			background: darken($white, 10%);
+		}
+	}
+} // menu__item

@@ -1,11 +1,11 @@
-var gulp      = require('gulp');
-var sass      = require('gulp-sass');
 var bs        = require('browser-sync').create();
-var concatCss = require('gulp-concat-css');
-var concat    = require('gulp-concat');
-var minify    = require('gulp-minify');
 var clean     = require('gulp-clean');
+var concat    = require('gulp-concat');
+var concatCss = require('gulp-concat-css');
 var del       = require('del');
+var gulp      = require('gulp');
+var minify    = require('gulp-minify');
+var sass      = require('gulp-sass');
 
 
 
@@ -30,6 +30,7 @@ gulp.task('sass', function () {
   .pipe(gulp.dest('./dist/assets/css/'))
   .pipe(bs.reload({stream: true}));
 });
+
 
 // minify and concat scripts
 gulp.task('scripts', function() {

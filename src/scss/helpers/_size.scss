@@ -1,0 +1,19 @@
+/*=============================
+=            #size            =
+=============================*/
+
+.h-equal__container {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.h-euqal__item{
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}

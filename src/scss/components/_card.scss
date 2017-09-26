@@ -1,0 +1,19 @@
+/*=============================
+=            #card            =
+=============================*/
+
+.card {
+	background:    $light-gray;
+	margin-bottom: .5rem;
+	margin-top:    .5rem;
+	overflow:      hidden;
+	padding:       1rem;
+}
+
+.card__image {
+	max-width: 100%;
+}
+
+.card__text {
+	text-align: left;
+}
