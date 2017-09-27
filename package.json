@@ -1,5 +1,5 @@
 {
-  "name": "170920_test",
+  "name": "bevm-skeleton-template",
   "version": "1.0.0",
   "description": "Simple project for some sass stuff.",
   "main": "gulpfile.js",
